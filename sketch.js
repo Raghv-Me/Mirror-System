@@ -1,6 +1,7 @@
 let mirs = []
 let rays = []
 let w = 10
+let sld
 function setup() {
   createCanvas(640,360);
   let bw = floor(width/w)
@@ -17,10 +18,12 @@ function setup() {
     }
   }
   console.log(mirs.length)
+  sld = createSlider(1,30,1,1)
 }
 
 function draw() {
   background(0);
+  for (let i = 0 ;i<sld.value();i++){
   for (let ray of rays)
   
   ray.move()
@@ -42,5 +45,6 @@ function draw() {
   if (count == mirs.length){
     noLoop()
   }
-  frameRate(30)
+  }
+  frameRate(60)
 }
